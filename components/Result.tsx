@@ -2,7 +2,7 @@
 export default function Result() {
   return (
     <div className="min-h-screen backdrop-blur-lg flex flex-col items-center justify-center p-6">
-      {/* <h1 className="text-4xl font-extrabold text-white drop-shadow-lg mb-12 text-center">
+      <h1 className="text-4xl font-extrabold text-white drop-shadow-lg mb-12 text-center">
         🎉 Results – Circuit Looms 🎉
       </h1>
       <div className="flex items-end justify-center gap-6 w-full max-w-4xl">
@@ -45,8 +45,8 @@ export default function Result() {
 
       <p className="mt-12 text-lg text-white font-semibold">
         Congratulations to all the winners & participants 🎊
-      </p> */}
-      <p className="text-4xl font-bold text-white">Coming Soon...</p>
+      </p>
+      {/* <p className="text-4xl font-bold text-white">Coming Soon...</p> */}
       {/* <ConfettiBlast/> */}
     </div>
   );
