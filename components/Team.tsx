@@ -90,15 +90,19 @@ const AccordionSection = ({
   title,
   people,
   cols = "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5",
+  enableBatchFilter = false,
 }: {
   title: string;
   people: { name: string; role: string; year: string; imageUrl: string }[];
   cols?: string;
+  enableBatchFilter?: boolean;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isActive, setIsActive] = useState("Batch of 2025");
+
   return (
     <section className="text-gray-900 px-6 py-12 hero-bg">
+      {/* Title toggle */}
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -112,18 +116,19 @@ const AccordionSection = ({
         </h2>
       </motion.div>
 
-      {isOpen && (
+      {/* Batch filter only if enabled */}
+      {isOpen && enableBatchFilter && (
         <div className="flex sm:flex-row flex-col p-5 gap-5">
           {["Batch of 2025", "Batch of 2024"].map((batch) => (
             <button
               key={batch}
               onClick={() => setIsActive(batch)}
               className={`px-4 py-2 rounded-full font-semibold transition 
-    ${
-      isActive === batch
-        ? "bg-gradient-to-r from-[#b0ceff] to-[#76a9fa] text-white shadow-lg scale-105"
-        : "bg-gray-200 text-[#1e3a8a] hover:bg-gradient-to-r hover:from-[#76a9fa] hover:to-[#b0ceff] hover:text-white"
-    }`}
+                ${
+                  isActive === batch
+                    ? "bg-gradient-to-r from-[#b0ceff] to-[#76a9fa] text-white shadow-lg scale-105"
+                    : "bg-gray-200 text-[#1e3a8a] hover:bg-gradient-to-r hover:from-[#76a9fa] hover:to-[#b0ceff] hover:text-white"
+                }`}
             >
               {batch}
             </button>
@@ -131,6 +136,7 @@ const AccordionSection = ({
         </div>
       )}
 
+      {/* People list */}
       {isOpen && (
         <motion.div
           initial="hidden"
@@ -140,10 +146,12 @@ const AccordionSection = ({
           className={`grid gap-12 px-4 ${cols}`}
         >
           {people.map((person, index) =>
-            person.year === isActive ? (
-              <TeamCard key={index} person={person} />
+            enableBatchFilter ? (
+              person.year === isActive && (
+                <TeamCard key={index} person={person} />
+              )
             ) : (
-              ""
+              <TeamCard key={index} person={person} />
             )
           )}
         </motion.div>
@@ -168,6 +176,7 @@ export default function Team() {
             title="Operative Modules"
             people={currentFamily}
             cols="grid-cols-1"
+            enableBatchFilter={false}
           />
         </div>
 
@@ -180,10 +189,12 @@ export default function Team() {
           />
         </div>
 
+        {/* Legacy Units (with batch filter) */}
         <AccordionSection
           title="Legacy Units"
           people={alumniFamily}
           cols="sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+          enableBatchFilter={true}
         />
       </div>
     </div>
