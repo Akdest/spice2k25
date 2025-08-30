@@ -1,4 +1,5 @@
 "use client";
+import ConfettiBlast from "./ConfettiBlast";
 export default function Result() {
   return (
     <div className="min-h-screen backdrop-blur-lg flex flex-col items-center justify-center p-6">
