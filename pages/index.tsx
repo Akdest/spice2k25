@@ -15,7 +15,7 @@ import Sponsors from "@/components/Sponsors";
 import Cursor from "@/components/Cursor";
 import { StickyScrollRevealDemo } from "@/components/PastEvents";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBullhorn, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import Result from "@/components/Result";
 
 const sectionVariants = {

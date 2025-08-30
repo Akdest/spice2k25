@@ -1,8 +1,4 @@
 "use client";
-
-import { motion } from "framer-motion";
-import { useState } from "react";
-import ConfettiBlast from "./ConfettiBlast"
 export default function Result() {
   return (
     <div className="min-h-screen backdrop-blur-lg flex flex-col items-center justify-center p-6">
