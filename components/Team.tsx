@@ -116,6 +116,7 @@ const AccordionSection = ({
         <div className="flex sm:flex-row flex-col p-5 gap-5">
           {["Batch of 2025", "Batch of 2024"].map((batch) => (
             <button
+              key={batch}
               onClick={() => setIsActive(batch)}
               className={`px-4 py-2 rounded-full font-semibold transition 
     ${

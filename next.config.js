@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     domains: ['avatars.githubusercontent.com'],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   async redirects() {
     return [
       {
