@@ -1,25 +1,25 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { useState } from 'react'
-import {
-  leads,
-  currentFamily,
-  alumniFamily,
-} from './data/teamdata'
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { leads, currentFamily, alumniFamily } from "./data/teamdata";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
   show: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-}
+};
 
 const fadeIn = (delay = 0.2) => ({
   hidden: { opacity: 0, y: 30 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, delay } },
-})
+});
 
-const TeamCard = ({ person }: { person: { name: string; role: string; year: string; imageUrl: string } }) => (
+const TeamCard = ({
+  person,
+}: {
+  person: { name: string; role: string; year: string; imageUrl: string };
+}) => (
   <motion.div
     variants={fadeIn()}
     initial="hidden"
@@ -41,19 +41,20 @@ const TeamCard = ({ person }: { person: { name: string; role: string; year: stri
     >
       {person.name}
     </motion.h3>
-    <motion.p
-      variants={fadeIn(0.5)}
-      className="text-md text-gray-600"
-    >
+    <motion.p variants={fadeIn(0.5)} className="text-md text-gray-600">
       {person.role} / {person.year}
     </motion.p>
   </motion.div>
-)
+);
 
-const TeamSection = ({ title, people, cols = 'grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5' }: {
-  title: string,
-  people: { name: string; role: string; year: string; imageUrl: string }[],
-  cols?: string
+const TeamSection = ({
+  title,
+  people,
+  cols = "grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5",
+}: {
+  title: string;
+  people: { name: string; role: string; year: string; imageUrl: string }[];
+  cols?: string;
 }) => (
   <section
     id="team"
@@ -83,15 +84,19 @@ const TeamSection = ({ title, people, cols = 'grid-cols-2 sm:grid-cols-2 md:grid
       ))}
     </motion.div>
   </section>
-)
+);
 
-const AccordionSection = ({ title, people, cols = 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5' }: {
-  title: string,
-  people: { name: string; role: string; year: string; imageUrl: string }[],
-  cols?: string
+const AccordionSection = ({
+  title,
+  people,
+  cols = "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5",
+}: {
+  title: string;
+  people: { name: string; role: string; year: string; imageUrl: string }[];
+  cols?: string;
 }) => {
-  const [isOpen, setIsOpen] = useState(false)
-
+  const [isOpen, setIsOpen] = useState(false);
+  const [isActive, setIsActive] = useState("Batch of 2025");
   return (
     <section className="text-gray-900 px-6 py-12 hero-bg">
       <motion.div
@@ -103,9 +108,27 @@ const AccordionSection = ({ title, people, cols = 'grid-cols-1 sm:grid-cols-2 md
         onClick={() => setIsOpen(!isOpen)}
       >
         <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl font-orbitron">
-          {title} {isOpen ? '▲' : '▼'}
+          {title} {isOpen ? "▲" : "▼"}
         </h2>
       </motion.div>
+
+      {isOpen && (
+        <div className="flex sm:flex-row flex-col p-5 gap-5">
+          {["Batch of 2025", "Batch of 2024"].map((batch) => (
+            <button
+              onClick={() => setIsActive(batch)}
+              className={`px-4 py-2 rounded-full font-semibold transition 
+    ${
+      isActive === batch
+        ? "bg-gradient-to-r from-[#b0ceff] to-[#76a9fa] text-white shadow-lg scale-105"
+        : "bg-gray-200 text-[#1e3a8a] hover:bg-gradient-to-r hover:from-[#76a9fa] hover:to-[#b0ceff] hover:text-white"
+    }`}
+            >
+              {batch}
+            </button>
+          ))}
+        </div>
+      )}
 
       {isOpen && (
         <motion.div
@@ -115,14 +138,18 @@ const AccordionSection = ({ title, people, cols = 'grid-cols-1 sm:grid-cols-2 md
           variants={sectionVariants}
           className={`grid gap-12 px-4 ${cols}`}
         >
-          {people.map((person, index) => (
-            <TeamCard key={index} person={person} />
-          ))}
+          {people.map((person, index) =>
+            person.year === isActive ? (
+              <TeamCard key={index} person={person} />
+            ) : (
+              ""
+            )
+          )}
         </motion.div>
       )}
     </section>
-  )
-}
+  );
+};
 
 export default function Team() {
   return (
@@ -159,5 +186,5 @@ export default function Team() {
         />
       </div>
     </div>
-  )
+  );
 }

@@ -1,33 +1,11 @@
 // data/teamdata.ts
 
 export const leads = [
-    {
-      name: 'Rashim',
-      role: 'Head',
-      year: 'Batch of 2025',
-      imageUrl: 'https://avatars.githubusercontent.com/u/114280987?v=4',
-    },
-    {
-      name: 'Sameer Chaurasia',
-      role: 'Co-Head',
-      year: 'Batch of 2025',
-      imageUrl: '/team/sameer.jpg',
-    },
+    
   ]
   
   export const currentFamily = [
-    {
-      name: 'Chitwan',
-      role: 'Management Head',
-      year: 'Batch of 2025',
-      imageUrl: '/team/chitwan.jpg',
-    },
-    {
-      name: 'Kartikey',
-      role: 'Technical Head',
-      year: 'Batch of 2025',
-      imageUrl: '/team/kartikey.jpg',
-    },
+    
     {
       name: 'Kanchan',
       role: 'Member',
@@ -64,9 +42,63 @@ export const leads = [
       year: 'Batch of 2026',
       imageUrl: 'https://avatars.githubusercontent.com/u/114203535?v=4',
     },
+    {
+      name: 'Kushagra Saxena',
+      role: 'Member',
+      year: 'Batch of 2027',
+      imageUrl: 'https://avatars.githubusercontent.com/u/154624873?v=4',
+    },
+    {
+      name: 'Yash Arya',
+      role: 'Member',
+      year: 'Batch of 2027',
+      imageUrl: 'https://avatars.githubusercontent.com/u/229173393?v=4',
+    },
+    {
+      name: 'Siddharth Singh',
+      role: 'Member',
+      year: 'Batch of 2027',
+      imageUrl: 'https://avatars.githubusercontent.com/u/157884837?v=4',
+    },
+    {
+      name: 'Sarvesh Singh',
+      role: 'Member',
+      year: 'Batch of 2027',
+      imageUrl: 'https://avatars.githubusercontent.com/u/229199745?v=4',
+    },
+    {
+      name: 'Raghav',
+      role: 'Member',
+      year: 'Batch of 2027',
+      imageUrl: 'https://avatars.githubusercontent.com/u/159568004?v=4',
+    },
   ]
   
   export const alumniFamily = [
+    {
+      name: 'Rashim',
+      role: 'Head',
+      year: 'Batch of 2025',
+      imageUrl: 'https://avatars.githubusercontent.com/u/114280987?v=4',
+    },
+    {
+      name: 'Sameer Chaurasia',
+      role: 'Co-Head',
+      year: 'Batch of 2025',
+      imageUrl: '/team/sameer.jpg',
+    },
+    {
+      name: 'Chitwan',
+      role: 'Management Head',
+      year: 'Batch of 2025',
+      imageUrl: '/team/chitwan.jpg',
+    },
+    {
+      name: 'Kartikey',
+      role: 'Technical Head',
+      year: 'Batch of 2025',
+      imageUrl: '/team/kartikey.jpg',
+    },
     {
         name: 'Arpit Jha',
         role: 'Head',

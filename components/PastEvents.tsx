@@ -6,6 +6,11 @@ import { PastEvents } from "./ui/sticky-scroll-reveal";
 
 const pastEventData = [
     {
+        title: "Blind Robo - Utkansh'25",
+        description: "SPICE Society, in collaboration with UTKANSH'25 organised Blind Robo- a high octane robotics competition where intuition met innovation. In this thrilling obstacle-based challenge, teams guided their bots using only commands, with no direct visibility",
+        content: <img src="/images/events/IMG_8219_11.jpg" alt="Vision to venture" className="w-full h-full object-cover" />,
+    },
+    {
         title: "Startup Sparks: Vision to Venture",
         description: "An inspiring session with Mr. Lovesangeet Singh Aulakh, CEO of Countryside Express, as he shares his journey of building a multi-crore logistics startup",
         content: <img src="/images/events/01_new.jpg" alt="Vision to venture" className="w-full h-full object-cover" />,
