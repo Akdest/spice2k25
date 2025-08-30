@@ -5,25 +5,6 @@ export const leads = [
   ]
   
   export const currentFamily = [
-    
-    {
-      name: 'Kanchan',
-      role: 'Member',
-      year: 'Batch of 2026',
-      imageUrl: 'https://avatars.githubusercontent.com/u/159458047?v=4',
-    },
-    {
-      name: 'Anshika Tripathi',
-      role: 'Member',
-      year: 'Batch of 2026',
-      imageUrl: 'https://avatars.githubusercontent.com/u/143907275?v=4',
-    },
-    {
-      name: 'Ayushi',
-      role: 'Member',
-      year: 'Batch of 2026',
-      imageUrl: 'https://avatars.githubusercontent.com/u/159468496?v=4',
-    },
     {
       name: 'Anmol',
       role: 'Member',
@@ -31,17 +12,24 @@ export const leads = [
       imageUrl: 'https://avatars.githubusercontent.com/u/143989818?v=4',
     },
     {
-      name: 'Gursaranjot Singh',
+      name: 'Ayushi',
       role: 'Member',
       year: 'Batch of 2026',
-      imageUrl: 'https://avatars.githubusercontent.com/u/100470188?v=4',
+      imageUrl: 'https://avatars.githubusercontent.com/u/159468496?v=4',
     },
-    {
+     {
       name: 'Ayush Kumar',
       role: 'Member',
       year: 'Batch of 2026',
       imageUrl: 'https://avatars.githubusercontent.com/u/114203535?v=4',
     },
+    {
+      name: 'Gursaranjot Singh',
+      role: 'Member',
+      year: 'Batch of 2026',
+      imageUrl: 'https://avatars.githubusercontent.com/u/100470188?v=4',
+    },
+   
     {
       name: 'Kushagra Saxena',
       role: 'Member',
