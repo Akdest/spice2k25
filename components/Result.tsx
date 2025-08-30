@@ -47,7 +47,7 @@ export default function Result() {
         Congratulations to all the winners & participants 🎊
       </p>
       {/* <p className="text-4xl font-bold text-white">Coming Soon...</p> */}
-      {/* <ConfettiBlast/> */}
+      <ConfettiBlast/>
     </div>
   );
 }
